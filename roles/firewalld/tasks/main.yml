@@ -18,23 +18,12 @@
     name: firewalld
     enabled: "{{ firewalld_enabled }}"
 
-- name: permit traffic in default zone for ssh service
+- name: Open ports
   firewalld:
-    service: ssh
+    service: "{{ item }}"
     permanent: yes
     state: enabled
-
-- name: permit traffic in default zone for http service
-  firewalld:
-    service: http
-    permanent: yes
-    state: enabled
-
-- name: permit traffic in default zone for https service
-  firewalld:
-    service: https
-    permanent: yes
-    state: enabled
+    with_items: "{{ firewalld_allowed_services }}"
 
 - name: Restart firewalld service
   service:

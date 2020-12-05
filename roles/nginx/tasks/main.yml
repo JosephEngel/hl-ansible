@@ -1,16 +1,9 @@
 ---
-- hosts: all
-  
-  become: true
 
-  #vars_files:
-  #  - vars/main.yml
-  
-  roles: 
-    - firewalld
+  - name: "include tasks: Install Nginx"
+    include_tasks: install.yml
 
-  tasks:
-  - include_tasks: install.yml
+  - name: "include tasks: Nginx Configuration"
+    include_tasks: config.yml
 
-  - include_tasks: config.yml
 

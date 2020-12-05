@@ -1,0 +1,10 @@
+---
+# nginx firewalld role variables
+firewalld_enabled: true
+
+firewalld_allowed_services:
+  - http
+  - https
+
+
+

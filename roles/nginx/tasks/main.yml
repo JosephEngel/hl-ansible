@@ -1,16 +1,6 @@
 ---
-- hosts: all
-  
-  become: true
+# tasks file for ansible-role-nginx
+- import_tasks: install.yml
 
-  #vars_files:
-  #  - vars/main.yml
-  
-  roles: 
-    - firewalld
-
-  tasks:
-  - include_tasks: install.yml
-
-  - include_tasks: config.yml
+- import_tasks: config.yml
 

@@ -23,10 +23,6 @@
     service: "{{ item }}"
     permanent: yes
     state: enabled
-    with_items: "{{ firewalld_allowed_services }}"
-
-- name: Restart firewalld service
-  service:
-    name: firewalld
-    state: restarted
-    
+  with_items: "{{ firewalld_allowed_services }}"
+  notify:
+    - restart firewalld

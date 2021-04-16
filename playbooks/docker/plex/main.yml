@@ -30,7 +30,7 @@
       community.docker.docker_image:
         name: "docker.io/plexinc/pms-docker"
         tag: latest
-        pull: yes
+        source: pull
         state: present
 
     - name: Restart Plex Container

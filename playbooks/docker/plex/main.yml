@@ -34,7 +34,7 @@
         state: present
 
     - name: Restart Plex Container
-      community.docker.docker_containers:
+      community.docker.docker_container:
         name: plex
         image: plexinc/pms-docker
         state: started

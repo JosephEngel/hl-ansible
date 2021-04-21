@@ -58,7 +58,7 @@
             TZ: 'America/New_York'
             PLEX_CLAIM: 'claim-rJH-s1YEBaftPZgNE3Sx'
             ADVERTISE_IP: "https://plex.engelcc.com:32400"
-        volume:
+        volumes:
           - /mnt/music:/data/music:ro
           - /mnt/plex/4k_Movies:/data/4k_Movies
           - /mnt/plex/Movies:/data/Movies
